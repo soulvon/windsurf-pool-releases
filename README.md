@@ -6,7 +6,7 @@
 
 无感换号 · 自动恢复 · 多实例分身 · 智能切号策略 · 界面汉化 · 长任务自动化
 
-[![Version](https://img.shields.io/badge/version-5.5.0-blue?style=flat-square)](https://github.com/soulvon/windsurf-pool-releases) [![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE) [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey?style=flat-square)]()
+[![Version](https://img.shields.io/badge/version-6.1.0-blue?style=flat-square)](https://github.com/soulvon/windsurf-pool-releases) [![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE) [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey?style=flat-square)]()
 
 </div>
 
@@ -20,10 +20,19 @@
   <a href=""><img src="https://img.shields.io/badge/爱发电-946CE6?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0xMiAyTDIgN2wxMCA1IDEwLTV6TTIgMTdsMTAgNSAxMC01TTIgMTJsMTAgNSAxMC01Ii8+PC9zdmc+&logoColor=white" alt="爱发电"></a>
 </p>
 <p align="center">
-  <img src="wechat-reward.jpg" width="240" alt="微信赞赏码">
+  <img src="https://raw.githubusercontent.com/soulvon/windsurf-pool-releases/main/wechat-reward.jpg" width="240" alt="微信赞赏码">
 </p>
 
 <p align="center"><sub>微信赞赏</sub></p>
+
+---
+
+## 交流群
+
+<p align="center">
+  <b>Windsurf Pool插件交流群</b>｜群号：<code>1075342078</code><br>
+
+</p>
 
 ---
 
@@ -121,6 +130,20 @@ sudo chmod -R a+w "/opt/windsurf"                     # Linux 手动安装
 
 <details>
 <summary><h2>更新日志（点击展开）</h2></summary>
+
+### v6.1.0
+- **新增 QQ 交流群信息**：README 顶部添加交流群文字入口，底部添加二维码图片（群号 1075342078）。
+
+### v6.0.0
+- **UI 字体全局提升**：提示文字、状态统计、按钮、日志、分页等多处 9-10px 小字统一提升至 11-12px，改善可读性。
+- **模型列表竖排显示**：「可用模型优先级」列表从横排 chip 改为竖排列表，每行一个模型名，支持滚动，不再截断。
+- **实例徽章实色化**：主实例 / Cockpit 来源徽章改为实色背景 + 白字；「未分配号池分组」改琥珀色高对比显示。
+- **下拉框 z-index 统一修复**：所有下拉框（筛选、账号选择器、标签分组）z-index 提升至 10001，修复被模态框遮挡问题。
+- **账号选择器 portal 定位修复**：修复 `.ap-list` 与 `.ap-list-portal` CSS 优先级冲突导致模态框内下拉无法打开的问题。
+- **「系统就绪」去卡片化**：长任务面板状态条去除边框和背景，改为纯文字显示。
+- **Mini Toggle 防变形**：添加 `flex-shrink: 0` 防止窄视口下开关被挤压。
+- **回复建议使用前提说明**：新增 ⚠️ 提示区块，说明需要在 Global Rules 中注入气泡规则。
+- **文案修正**：「未分配标签分组号池」→「未分配号池分组」。
 
 ### v5.0.3
 - **Windows 提权批处理（`elevatedFs.ts`）**：新增 `elevatedFs` 模块，将启动阶段所有安装目录写操作（补丁注入、增强注入、校验值修复）合并为一次 UAC 弹窗；用户拒绝时提供「重试」或「以管理员身份运行」选项，不再每个文件单独报错。
@@ -478,5 +501,17 @@ sudo chmod -R a+w "/opt/windsurf"                     # Linux 手动安装
 <a href=""><img src="https://img.shields.io/badge/爱发电-946CE6?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0xMiAyTDIgN2wxMCA1IDEwLTV6TTIgMTdsMTAgNSAxMC01TTIgMTJsMTAgNSAxMC01Ii8+PC9zdmc+&logoColor=white" alt="爱发电"></a>
 
 <sub>MIT License · Made with ❤️ by soulvon</sub>
+
+</div>
+
+---
+
+<div align="center">
+
+### 交流群
+
+<img src="qqqun.jpg" width="240" alt="QQ 交流群二维码">
+
+**Windsurf 增强插件交流群**｜群号：`1075342078`
 
 </div>

@@ -6,7 +6,7 @@
 
 无感换号 · 自动恢复 · 多实例分身 · 智能切号策略 · 界面汉化 · 长任务自动化
 
-[![Version](https://img.shields.io/badge/version-6.1.0-blue?style=flat-square)](https://github.com/soulvon/windsurf-pool-releases) [![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE) [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey?style=flat-square)]()
+[![Version](https://img.shields.io/badge/version-6.1.1-blue?style=flat-square)](https://github.com/soulvon/windsurf-pool-releases) [![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE) [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey?style=flat-square)]()
 
 </div>
 
@@ -132,6 +132,8 @@ sudo chmod -R a+w "/opt/windsurf"                     # Linux 手动安装
 <summary><h2>更新日志（点击展开）</h2></summary>
 
 ### v6.1.0
+- **CSS V2 设计语言重构**：`main.css` 从 6477 行混合样式重写为 2400 行清洁 V2 样式表，新增 CSS 变量色彩令牌系统（VS Code 主题 + 强调色盘），完整覆盖卡片、面板、模态框、网格、Toast 等组件。
+- **补全 25 个缺失 CSS 类**：覆盖审计发现的实例卡片状态类（`.current/.running/.stopped`）、网格标题与锁定遮罩、批量导入计数样式、账号选择器列表、标签徽章、浅色主题适配等。
 - **新增 QQ 交流群信息**：README 顶部添加交流群文字入口，底部添加二维码图片（群号 1075342078）。
 
 ### v6.0.0

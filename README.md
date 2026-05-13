@@ -131,6 +131,12 @@ sudo chmod -R a+w "/opt/windsurf"                     # Linux 手动安装
 <details>
 <summary><h2>更新日志（点击展开）</h2></summary>
 
+### v6.8.6
+- **🐛 彻底修复账号卡片闪烁**：三管齐下消灭闪烁——
+  1. `scheduleRerender` 改为**就地 patch**：usage 数据到达时只更新现有卡片的文本/进度条，**不再全量重建 DOM**（零 DOM 变动 = 零闪烁）
+  2. `renderCards` 改用 **DocumentFragment + replaceChildren**：需要全量重建时，先在内存构建全部卡片，再一次性原子替换（消除 `innerHTML=''` 到 `appendChild` 之间的中间空白帧）
+  3. 所有 `renderCards` 调用均**禁用 `cardFadeIn` 入场动画**（`no-card-anim` class），下一帧恢复，确保后续真正新增的卡片仍有动画
+
 ### v6.7.13
 - 修复换号日志表格右侧列数据为空问题：改用 indexOf 定位箭头字符，彻底解决正则编码不一致导致的解析失败
 - 配额历史新增"当前"和"最近"快捷筛选按钮，点击即切换账号筛选

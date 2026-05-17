@@ -6,7 +6,7 @@
 
 无感换号 · 自动恢复 · 多实例分身 · 智能切号策略 · 界面汉化 · 长任务自动化
 
-[![Version](https://img.shields.io/badge/version-7.1.0-blue?style=flat-square)](https://github.com/soulvon/windsurf-pool-releases) [![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE) [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey?style=flat-square)]()
+[![Version](https://img.shields.io/badge/version-6.9.14-blue?style=flat-square)](https://github.com/soulvon/windsurf-pool-releases) [![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE) [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey?style=flat-square)]()
 
 </div>
 
@@ -131,11 +131,16 @@ sudo chmod -R a+w "/opt/windsurf"                     # Linux 手动安装
 <details>
 <summary><h2>更新日志（点击展开）</h2></summary>
 
-### v7.1.0
-- **🩺 测活面板升级**：测活入口与用量统计统一风格，测活面板支持并发、真实模型回复、默认 `你好` 探测消息、结果悬停查看回复详情。
-- **📊 统计面板增强**：新增账号诊断记录与 Windsurf 上下文监控页，可只读查看最近 Cascade 会话、模型、steps、token 与最新回复。
-- **🎨 UI 统一修复**：统一统计面板/测活面板颜色体系，修复浅色主题下一键测活按钮 hover/禁用态看不清、表格列宽与状态列竖排问题。
-- **🔧 模型映射校准**：补齐 GPT-5.4/GPT-5.5、Claude 4.6、SWE 1.6、Gemini、GLM、Kimi 等 Windsurf 实际模型 UID，降低模型错配。
+### v7.2.36
+- **✨ 恢复 Banner 视觉重设计**：glassmorphism 毛玻璃背景、顶部渐变装饰条、图标容器、pill 倒计时徽章、渐变按钮带阴影、更粗的发光进度条、底部分隔线，整体更现代精致。
+- **✨ 恢复 Toast 通知重设计**：左侧彩色指示条（蓝/绿/琥珀）、图标背景容器、毛玻璃效果、scale 弹入动画。
+
+### v7.2.1
+- **🏷️ 多标签支持**：每个账号可添加多个标签，标签栏和筛选器全面适配多标签。
+- **🏷️ 标签显示数量**：标签栏每个标签 chip 显示该标签下的账号数（如"推荐(5)"），"全部"显示总数。
+- **🏷️ 未分类标签**：自动在标签栏末尾显示灰色"未分类"标签，筛选没有 tag 的账号。
+- **🏷️ 标签编辑弹窗改造**：从单文本输入改为多标签 picker（已选标签 chips + 输入框回车添加 + 已有标签点选 toggle）。
+- **🏷️ 卡片多标签展示**：账号卡片显示所有标签 chip，每个可独立点击筛选/右键编辑/双击改色，末尾有"+"快速编辑入口。
 
 ### v6.9.14
 - **🔄 动态模型列表**：模型选择器不再硬编码，改为从 Windsurf 本地数据库（state.vscdb）动态读取，模型名称与 Windsurf 下拉完全一致，自动过滤变体（Low/Medium/High 等）。
@@ -598,6 +603,25 @@ sudo chmod -R a+w "/opt/windsurf"                     # Linux 手动安装
   - **备份恢复**：首次修改前自动备份为 `product.json.origin`；执行「恢复原始 Workbench」会一并恢复 `product.json`。
   - **已知现象**：Windsurf 自动更新后**首次启动**可能仍会闪一下「已损坏」通知（此时扩展尚未激活、checksums 还未重算），扩展激活后会自动修复，**第二次启动起完全无感**。该闪动已由 DOM 兜底逻辑关闭。
   - **权限要求**：`product.json` 已加入权限预检，macOS/Linux 若目录不可写会弹一键 `sudo chmod` 提示。
+
+### v7.3.0
+- **测活面板默认配置调优**：默认模型改为 Claude Opus 4.6，并发改为稳定 x1，间隔改为 60 秒。移除 SWE-1.6 冗余静态选项。
+- **测活面板暂停/停止按钮重设计**：pill 形状 + SVG 图标 + 半透明填充背景 + 平滑过渡动画；暂停态琥珀色，继续态绿色，停止按钮红色系。
+- **构建修复**：修正 `tsconfig.json` 的 `rootDir` 配置，确保编译产物正确输出到 `out/` 目录。
+- **切号通知去重**：blocked 类型只保留 webview toast，移除 VS Code 原生弹窗；非 blocked 类型走 showAlert 模态弹窗不再重复 toast。
+- **命令面板失败反馈**：`switchAccount` / `switchNextAccount` 失败时显示具体原因。
+- **自动恢复 Bug F 修复**：切号成功后 `waitForAIIdle` 回调补上 `autoRecoveryEnabled` 短路检查。
+
+### v7.2.37
+- **360 拦截优化（零 PowerShell 启动）**：
+  - 所有启动路径的 PowerShell 调用替换为原生 Windows 命令（wmic / tasklist / taskkill / reg），不触发 360 等安全软件拦截。
+  - `getRunningWindsurfEntries`: wmic 异步优先，PowerShell 降为 fallback。
+  - `detectWindsurfExePath`: wmic 获取进程路径 + reg query 查注册表，不再用 PowerShell。
+  - `warmupSoundPlayer`: 不在启动时预创建 PowerShell 进程，改为首次播放时惰性初始化。
+  - `acpRecovery`: wmic 查询进程 + taskkill 终止，完全移除 PowerShell。
+  - `findLsBinary`: wmic 替代 PowerShell Get-CimInstance。
+  - `stopInstance`: taskkill 替代 PowerShell CloseMainWindow。
+  - 所有 runShellAsync 添加 windowsHide: true，避免控制台弹窗。
 
 ### v4.13.2
 - **跨平台兼容（macOS / Linux 关键修复）**：

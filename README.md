@@ -6,7 +6,7 @@
 
 无感换号 · 自动恢复 · 多实例分身 · 智能切号策略 · 界面汉化 · 长任务自动化
 
-[![Version](https://img.shields.io/badge/version-7.7.0-blue?style=flat-square)](https://github.com/soulvon/windsurf-pool-releases) [![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE) [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey?style=flat-square)]()
+[![Version](https://img.shields.io/badge/version-7.8.0-blue?style=flat-square)](https://github.com/soulvon/windsurf-pool-releases) [![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE) [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey?style=flat-square)]()
 
 </div>
 
@@ -130,6 +130,10 @@ sudo chmod -R a+w "/opt/windsurf"                     # Linux 手动安装
 
 <details>
 <summary><h2>更新日志（点击展开）</h2></summary>
+
+### v7.8.0
+- **⚙️ 简单模式冷却时间可配置**：简单续聊模式的冷却间隔从固定 3 秒改为 1-60 秒可调，UI 新增输入框实时调整。
+- **📝 文案修正**：触发条件描述从"红三角错误图标"改为"三角警告图标"，匹配实际行为（所有颜色三角形都会触发）。
 
 ### v7.2.36
 - **✨ 恢复 Banner 视觉重设计**：glassmorphism 毛玻璃背景、顶部渐变装饰条、图标容器、pill 倒计时徽章、渐变按钮带阴影、更粗的发光进度条、底部分隔线，整体更现代精致。

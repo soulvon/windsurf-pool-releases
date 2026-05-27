@@ -6,7 +6,7 @@
 
 无感换号 · 自动恢复 · 多实例分身 · 智能切号策略 · 界面汉化 · 长任务自动化
 
-[![Version](https://img.shields.io/badge/version-7.8.0-blue?style=flat-square)](https://github.com/soulvon/windsurf-pool-releases) [![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE) [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey?style=flat-square)]()
+[![Version](https://img.shields.io/badge/version-7.9.0-blue?style=flat-square)](https://github.com/soulvon/windsurf-pool-releases) [![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE) [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey?style=flat-square)]()
 
 </div>
 
@@ -130,6 +130,13 @@ sudo chmod -R a+w "/opt/windsurf"                     # Linux 手动安装
 
 <details>
 <summary><h2>更新日志（点击展开）</h2></summary>
+
+### v7.9.0
+- **📦 导出模态框**：导出账号改为弹出模态框，支持选择导出范围（筛选/全部）和格式（JSON 完整/文本），可同时复制到剪贴板。
+- **📥 导入保留原始信息**：导入时自动保存 importMeta（原始密码、token、导入来源、时间），导出时完整保留。
+- **🔄 插件导出文件直接导入**：本插件导出的 JSON 文件导入时无需重新登录验证，有 apiKey 直接存储。
+- **📂 文件导入入口优化**：批量导入区域顶部新增醒目的"从文件导入"按钮，所有格式下都可见。
+- **🐛 修复导入凭证检查遗漏**：importMeta 中的 password/rawToken 现在也被正确识别为有效凭证。
 
 ### v7.8.0
 - **⚙️ 简单模式冷却时间可配置**：简单续聊模式的冷却间隔从固定 3 秒改为 1-60 秒可调，UI 新增输入框实时调整。

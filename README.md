@@ -6,7 +6,7 @@
 
 无感换号 · 自动恢复 · 多实例分身 · 智能切号策略 · 界面汉化 · 长任务自动化
 
-[![Version](https://img.shields.io/badge/version-7.9.0-blue?style=flat-square)](https://github.com/soulvon/windsurf-pool-releases) [![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE) [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey?style=flat-square)]()
+[![Version](https://img.shields.io/badge/version-7.9.24-blue?style=flat-square)](https://github.com/soulvon/windsurf-pool-releases) [![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE) [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey?style=flat-square)]()
 
 </div>
 
@@ -130,6 +130,17 @@ sudo chmod -R a+w "/opt/windsurf"                     # Linux 手动安装
 
 <details>
 <summary><h2>更新日志（点击展开）</h2></summary>
+
+### v7.9.24
+- **🔍 异常监控重做**：异常列表改为按账号分组的卡片式布局（可折叠），顶部摘要卡显示监控账号/日志数/配额变动/异常数。
+- **🖱️ 点击账号跳转**：异常卡片中的账号邮箱可点击，直接跳转到「配额历史」并自动筛选该账号。
+- **🫀 多实例心跳防误报**：异常检测接入跨实例账号锁心跳（90s 过期 + PID 判活），某账号被其他实例占用时不再误报为异常。
+- **🛡️ 三轮审查修复**：
+  - 修复 `getInstanceEmailMap` 以 instanceId 为 key 导致活跃邮箱漏报 → 误报（改用以 email 为单位的 `getAllLockedEmails`）。
+  - 数据刷新后若在异常页自动重新检测，避免使用陈旧的活跃实例快照。
+  - 相邻配额记录间隔超过 3h 时视为数据不连续，跳过检测，避免跨时段累积差值被单点误判。
+  - 无监控账号时也更新徽章；移除死代码；补 null guard。
+- **📉 检测精度**：只检测最近 24 小时、日/周配额减少 ≥ 2% 才算有意义消耗，大幅减少误报。
 
 ### v7.9.0
 - **📦 导出模态框**：导出账号改为弹出模态框，支持选择导出范围（筛选/全部）和格式（JSON 完整/文本），可同时复制到剪贴板。

@@ -1,12 +1,12 @@
 <div align="center">
 
-# Windsurf Pool — 号池管理
+# Kite — AI IDE 增强套件
 
-**让 AI 编程永不断流的 Windsurf 多账号管理引擎**
+**面向 Windsurf / Devin 的界面增强、多实例、BYOK（开发中）与多账号号池工具**
 
-无感换号 · 自动恢复 · 多实例分身 · 智能切号策略 · 界面汉化 · 长任务自动化
+界面增强 · BYOK（开发中）自带 Key · 多实例分身 · 多账号号池 · 自动恢复 · 长任务自动化
 
-[![Version](https://img.shields.io/badge/version-8.0.0-blue?style=flat-square)](https://github.com/soulvon/windsurf-pool-releases) [![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE) [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey?style=flat-square)]()
+[![Version](https://img.shields.io/badge/version-8.5.0-blue?style=flat-square)](https://github.com/soulvon/windsurf-pool-releases) [![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE) [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey?style=flat-square)]()
 
 </div>
 
@@ -30,7 +30,7 @@
 ## 交流群
 
 <p align="center">
-  <b>Windsurf Pool插件交流群</b>｜群号：<code>1075342078</code><br>
+  <b>Kite 插件交流群</b>｜群号：<code>1075342078</code><br>
 
 </p>
 
@@ -40,7 +40,7 @@
 
 Windsurf 的 AI 配额用完就得等重置，手动切号要退出登录、重启编辑器，**正在进行的对话直接丢失**。多开窗口还会互相踢号。
 
-Windsurf Pool 在 **不退出、不重启、不丢失会话** 的前提下，把多个账号变成一个无限额度的池子：配额快用完 → 自动切到最优账号 → 接着上次进度继续 → 你甚至感知不到发生了什么。
+Kite 在 **不退出、不重启、不丢失会话** 的前提下，把界面增强、BYOK、多实例和多账号能力整合成一个 IDE 增强套件：配额快用完 → 自动切到最优账号 → 接着上次进度继续 → 你甚至感知不到发生了什么。
 
 ## 核心能力
 
@@ -94,7 +94,7 @@ Windsurf Pool 在 **不退出、不重启、不丢失会话** 的前提下，把
 
 1. 下载最新 [`.vsix` 发布包](https://github.com/soulvon/windsurf-pool-releases)
 2. 命令面板 → `Extensions: Install from VSIX...` → 选择文件
-3. 侧栏点击 **Windsurf 号池管理** 图标 → 添加账号（登录 / 批量导入 / 从当前账户一键导入）
+3. 侧栏点击 **Kite** 图标 → 添加账号（登录 / 批量导入 / 从当前账户一键导入）
 4. 点击「切换」或开启自动切号 → 完成
 
 ### 系统要求
@@ -131,6 +131,30 @@ sudo chmod -R a+w "/opt/windsurf"                     # Linux 手动安装
 <details>
 <summary><h2>更新日志（点击展开）</h2></summary>
 
+### v8.5.0
+- **BYOK 改为开发中状态**：侧栏与命令面板标记 BYOK 开发中；暂停新增配置、启动 Sidecar 和应用 Patch，保留停止 Sidecar / 恢复 Patch 以便清理旧状态。
+
+### v8.4.31
+- **自动化页交互与视觉修复**：修复左侧「长任务」入口与内部分段状态不同步的问题，优化自动化总开关对齐，并统一左侧子导航、分段控件和轻拟物小卡片的视觉风格。
+
+### v8.4.30
+- **侧栏视觉精简**：账号、实例、自动化、增强等主 Tab 去掉顶层面板背景、外框和大阴影，顶层区域固定展开并隐藏折叠箭头，整体调整为更接近 IDE-BYOK 的简洁科技轻拟物风格。
+
+### v8.4.29
+- **多实例分身界面微调**：去掉多实例分身区域的最外层面板边框、圆角背景和阴影，保留内部实例卡片边框。
+
+### v8.4.28
+- **BYOK 日志界面修复**：日志页增加运行日志标题、条数统计、空状态提示和稳定高度；窄侧栏下筛选/导出/清空按钮改为紧凑栅格，避免只剩一条灰色日志占位。
+
+### v8.4.27
+- **品牌与图标更新**：软件展示统一为 Kite，侧栏、设置页、命令分类和 README 定位文案去掉“IDE增强助手/IDE 号池管理”的旧表达，并换用新版 logo。
+
+### v8.4.26
+- **BYOK 供应商与模型映射交互升级**：供应商添加、模型选择和模型映射改为接近 IDE-BYOK 的全屏编辑体验，支持供应商模型列表、默认模型、映射搜索和清晰的状态反馈。
+- **新增故障转移与扩展槽位管理**：模型映射可配置多目标顺序 failover；扩展槽位可从 Windsurf 模型目录启用，并为注入模型指定供应商、目标模型和图片能力。
+- **新增 BYOK 显示名模板与运行统计**：支持 `{prefix}` / `{label}` / `{provider}` / `{apiModel}` 模板，侧栏显示请求、Token、重试、错误和最近路由。
+- **审查修复**：sidecar 运行时复制会跳过开发用 `node_modules`，避免启动时复制大量无关文件；日志“清空显示”不会被下一次状态同步立即刷回。
+
 ### v7.10.0
 - **♻️ 异常监控核心重构**：用「配额记录时即时打标」取代「切号日志事后重建」，从根上解决多实例误报。
   - 每次刷新记录配额时，即时标记该账号是否被任意号池实例持有锁（数据源为跨实例 atomic 锁文件，可靠）。
@@ -151,16 +175,248 @@ sudo chmod -R a+w "/opt/windsurf"                     # Linux 手动安装
   - 无监控账号时也更新徽章；移除死代码；补 null guard。
 - **📉 检测精度**：只检测最近 24 小时、日/周配额减少 ≥ 2% 才算有意义消耗，大幅减少误报。
 
-### v7.9.0
-- **📦 导出模态框**：导出账号改为弹出模态框，支持选择导出范围（筛选/全部）和格式（JSON 完整/文本），可同时复制到剪贴板。
-- **📥 导入保留原始信息**：导入时自动保存 importMeta（原始密码、token、导入来源、时间），导出时完整保留。
-- **🔄 插件导出文件直接导入**：本插件导出的 JSON 文件导入时无需重新登录验证，有 apiKey 直接存储。
-- **📂 文件导入入口优化**：批量导入区域顶部新增醒目的"从文件导入"按钮，所有格式下都可见。
-- **🐛 修复导入凭证检查遗漏**：importMeta 中的 password/rawToken 现在也被正确识别为有效凭证。
+### v7.8.9
+- **📤 选择性导出**：多选模式下新增「导出」按钮，可只导出选中的账号，无需全部导出。
 
-### v7.8.0
-- **⚙️ 简单模式冷却时间可配置**：简单续聊模式的冷却间隔从固定 3 秒改为 1-60 秒可调，UI 新增输入框实时调整。
-- **📝 文案修正**：触发条件描述从"红三角错误图标"改为"三角警告图标"，匹配实际行为（所有颜色三角形都会触发）。
+### v7.8.8
+- **⚡ 快速批量导入**：从文件导入已存储账号（有 apiKey）时，一次性批量写入，秒级完成。无需逐个等待。
+- **🔧 UI 修复**：批量导入按钮大小对齐。
+
+### v7.8.7
+- **📂 从文件导入**：JSON 导入 Tab 新增「从文件导入」按钮，可直接选择本插件导出的 JSON 文件一键导入，无需手动复制粘贴。
+
+### v7.8.6
+- **⏸ 批量导入暂停/取消按钮**：导入进度弹窗新增「暂停」和「取消」控制按钮。
+  - **暂停**：点击后暂停导入，按钮变为「继续」，再次点击恢复
+  - **取消**：立即终止导入，显示已完成的结果和剩余未导入数量
+  - 取消后支持重试失败项（与正常完成一致）
+
+### v7.8.4
+- **🛑 B1（中优先级 Bug）：长任务停止后不再多发一条 continue**：用户在 brainless 模式发送中点「强制停止」时，已经在 `await sendContinueMessage` 中的发送会继续完成（因为 `_shouldAbortContinueSend` 只查 `'off'` 不查模式切换），导致明明点了停止仍蹦出一条"继续"。修复：`sendContinueMessage(customText, expectedMode)` 新增第二参数，每个 await 边界除查 `'off'` 外还验证 `settings.continueMode !== expectedMode`；`fireBrainlessContinue` 传 `'brainless'`，`simpleContinue.checkAndSend` 传 `'simple'`，恢复路径不传（保持原模式无关行为）。`fireBrainlessContinue` await 后再补一次 mode 检查兜底状态污染。
+- **🧹 B2（一致性）：`fireBrainlessContinue` 的 3s setTimeout 内补 mode 短路**：发送后 3s 主动错误检测的 setTimeout 闭包内未独立查模式，长任务停止后仍会跑 `checkForErrors`（虽自带 `autoRecoveryEnabled` 守门不会乱触发，但浪费 DOM 扫描）。
+- **📊 B3（可观测性）：`stopBrainlessMode` 改用 `applySettingsChange` 走统一出口**：原本直接 `settings.continueMode = 'simple' + saveSettings + startSimpleContinue` 三步手动操作，跳过 v7.8.2 的 diff log。改用 `applySettingsChange({ continueMode: 'simple' }, 'brainless-stop')` 一行替代，让长任务自动停止也出现在关键开关变更日志里（与侧栏切换路径完全一致）。
+
+### v7.8.3
+- **🔍 v7.8.2 自审修复 4 项**：完成 v7.8.2 后做了一轮代码审查，补完 4 处遗漏。
+  - **🔴 R1（拼写 Bug）**：`applySettingsChange` 的 `guardianKeys` 数组里把 `autoApprovePermission`（实际单数）误写成 `autoApprovePermissions`（多了 s），导致"自动批准权限"开关变化永远不出现在 diff log 里，可观测性失效。同时把 `dismissCorrupt` 也加进 guardianKeys（之前漏了）。
+  - **🟠 R2（同类漏网）**：`sendInputAndClick`（`executeAfterAction('retry-message')` 的实际执行路径）只检查 `isInCooldown`，未检查 `autoRecoveryEnabled`，且 `setTimeout 400ms` 闭包内也无短路。补三层短路：写入前 / `setInputText` 写入完成后（含清空残留）/ `setTimeout` 闭包内。
+  - **🟠 R3（一致性）**：`submitBubbleText` 的 setTimeout 短路时未清空 `setInputText` 已写入的 bubble 文本，留在输入框里很奇怪（与 `sendContinueMessage` 的 `before-trySend` 行为不一致）。补：抽取 `_cleanupBubbleResidual` helper，在 post-setInput / setTimeout 两处短路时都清空；并在函数开头增加 `bubblesEnabled` 提前短路（关掉了根本不该写）。
+  - **🟡 R4（UX 文案）**：banner cancel toast 显示 `动作 [send-continue] 已被关闭` 这种英文 action 名用户看不懂，改用现有 `ACTION_LABEL` 映射显示成 `动作「发继续」已被关闭`。
+- **审查方法学**：每次大修后做一次完整审查，重点查"我刚加的代码是否有遗漏的同类反模式"（这次发现 R2 是 P0-2 修改的同类漏网）+ "字段名是否真实存在"（R1）+ "新增逻辑是否与已有行为一致"（R3）+ "新增 toast 是否本地化"（R4）。
+
+### v7.8.2
+- **🧟 修复"补丁僵尸程序"问题**：关闭开关后仍执行残留动作的 5 处 in-flight 漏洞。
+  - **P0 - `sendContinueMessage`**：函数内 4-5s 长 await 链（setInputText 重试 + 验证轮询）只在入口检查一次 `continueMode === 'off'`，关掉"自动继续"总开关后已经在 await 中的发送仍会完成。修复：在所有 await 边界后重新检查，并在 `trySendMessage` 触发前最后短路（含清空输入框残留）。
+  - **P0 - `executeAfterAction`**：切号成功后的重试循环（最长 6s，AI 生成等待 3s + 重试间隔 3s）期间关 `autoRecoveryEnabled` / `continueMode` 不能中断。修复：循环开头 + 每个 await 后短路；`retry-message` 和 `auto` 路径前也补检查。
+  - **P1 - Banner 倒计时漏洞**：恢复 banner 显示时按钮按 `isActionDisabled` 置灰，但倒计时（5-15s）结束自动 execute 时不再检查。修复：execute 前最后一次 `isActionDisabled` 过滤，被禁则取消并 toast 提示。
+  - **P1 - `submitBubbleText`**：点气泡后 `setTimeout 400ms` 闭包内未独立检查 `bubblesEnabled` / `bubblesAutoSend`，关掉气泡总开关仍会发送。修复：setTimeout 内独立短路。
+  - **P2 - 可观测性**：`applySettingsChange` 内对 9 个关键开关 + 4 个 `guardian.*` 子开关做 diff 日志，方便用户/开发者排查"关了开关却还在动作"类问题。
+- **同类已修过的反模式**：`handleRetryAction` / `handleSwitchModelAction` / `checkForPoolResult` / `waitForAIIdle` 的 setTimeout 闭包（v6.6.5）；本版补完所有 `await` 边界。
+
+### v7.8.1
+- **🎨 文案修复**：切换按钮的进行中状态文案从 `检查中` 改为 `切换中`，避免与「切号预检」开关概念混淆。
+  - 原文案让人误以为关闭「切号预检」后切号还会进行某种检查
+  - 实际「切号预检」开关只影响切号前的 Cascade 限速预检（多 0.5-2s 延迟），与按钮文案无关
+  - 按钮显示「切换中」是切号操作正在执行的 UI 反馈（等 PATCHED_CMD 就绪 + 调用 SwitchAccountByPatch）
+
+### v7.7.11
+- **🔁 每次升级都强制重置为「简单」模式**：从一次性标记（`__migratedToSimpleV779`）改为**版本号对比机制**（`__defaultsAppliedAt`）。
+  - **同版本内重启** → 不触发（尊重用户在该版本周期内的偏好）
+  - **跨版本升级** → 强制将 `continueMode='smart'` 重置为 `'simple'`
+  - 长任务运行中（`brainless`）和已禁用（`off`）保持不变
+  - 清理旧的 `__migratedToSimpleV779` 标记
+
+### v7.7.10
+- **🐛 长任务停止后回到「简单」而非「守护」**：审查发现长任务面板的暂停/停止/强制停止按钮仍硬编码 `continueMode='smart'`，与 v7.7.9 的"默认 simple"策略不一致。
+  - 移除 webview 端的 `saveLtMode(mode)` 强制覆盖逻辑
+  - 改为依赖 `collectEnhSettings()` 根据 `_ltRunning` + 当前 Tab 自动推断 continueMode
+  - 行为与 `windsurf-better.js` 的 `stopBrainlessMode` 对称：长任务结束 → 回到 `simple`
+
+### v7.7.9
+- **🔁 老用户强制迁移到「简单」模式**：v7.7.8 升级时保留了老用户的 `continueMode='smart'`，导致大部分人更新后仍停留在守护模式没体验到新默认。本版补迁移：
+  - 扩展激活时一次性检测 `enh-settings.json`：若 `continueMode === 'smart'`（或未设置）→ 强制切到 `'simple'` + `autoContinueTab = 'simple'`
+  - 通过 `__migratedToSimpleV779` 幂等标记，迁移仅触发一次；后续用户手动切回守护，不会再被覆盖
+  - 长任务运行中（`brainless`）和已禁用（`off`）状态**不动**，避免打断
+  - 双保险：`windsurf-better.js` 的 `loadSettings()` 也加了同样标记的防御性迁移，覆盖 localStorage 残留场景
+
+### v7.7.8
+- **🎯 自动继续：三模式互斥（默认 simple）**：自动继续面板的 Tab 从 2 段（守护 / 长任务）扩展为 3 段（**简单** / 守护 / 长任务），三种模式互斥，**默认 simple**。
+  - **简单模式**：检测红三角错误图标自动发 continue。极简，只做一件事，不依赖文本/语言
+  - **守护模式**：原有的「自动续写 + 自动重试 + 突破限制 + 清除干扰 + 自动批准权限」完整能力
+  - **长任务模式**：原有的队列循环 + 闲置检测
+  - **老用户已选 smart/brainless 保持不变**；新装用户默认进入 simple
+  - 长任务结束（错误/上限/手动停止）后回到 simple，而非 smart
+  - 撤回 v7.7.6 引入的「简单续聊」子开关（守护模式里的）— 升级为独立模式
+
+### v7.7.7
+- **🩺 测活面板默认隐藏 + 可手动开启**：侧栏底部「测活面板」卡片入口改为默认不显示，避免对仅用号池/切号的用户产生干扰。
+  - 在「Windsurf 增强」面板新增「显示测活面板」开关（默认关闭）。
+  - 开关打开后，侧栏底部立即显示「测活面板」卡片（不需要重启/重载）。
+  - 设置持久化到 `enh-settings.json` 的 `showHealthPanel` 字段，跨实例共享。
+  - 命令面板 `windsurfPool.openHealthCheck`（打开独立大测活面板）行为不变。
+
+### v7.7.6
+- **🎯 简单续聊**：守护模式新增「简单续聊」开关，默认启用。
+  - 检测 Cascade 异常停止时显示的红三角警告图标（`svg.lucide-triangle-alert`），自动发送 `continue`
+  - 不依赖文本正则/i18n，跨语言通用，覆盖原 recovery 框架兜底不到的场景
+  - 与「自动续写」（点 Continue 按钮）、「突破限制」（工具上限发 continue）三者互补，触发条件互不重叠
+  - 复用现有 `sendContinueMessage()` 的防重入锁与冷却，不会重复发送
+
+### v7.7.4
+- **🔄 余额号保护健壮性加固**：修复多个边界场景，防止死循环和判断不一致。
+  - **统一判断**：抽取 `_hasUsableBalance()` 方法，所有 6 处余额检查使用统一阈值
+  - **防缓存延迟**：`forceSwitch` 余额检查前先刷新缓存（超 30s 时），避免余额已扣完但缓存过期
+  - **防死循环**：60s 内连续 3 次 balance-skip 后强制切号，不再相信缓存
+  - 定时器路径和信号路径现在使用完全一致的判断标准
+
+### v7.7.3
+- **💰 余额号保护配置化**：新增「余额保护」设置项（自动切号 → 高级设置），可配置跳过切号的最小余额阈值。
+  - 默认 $0.10：余额 ≥ $0.10 时，配额耗尽不切号，自动发继续
+  - 设为 $0 可禁用保护，恢复原有切号逻辑
+  - 避免余额只剩几分钱时仍跳过切号的尴尬情况
+
+### v7.7.2
+- **💰 余额号保护**：配额耗尽但有付费余额时，不再触发自动切号，而是自动发送"继续"让 AI 接着用余额工作。
+  - 扩展端检测到当前账号有 `overageBalanceMicros > 0` 时，跳过切号逻辑
+  - 通知 workbench 端自动发继续，用户无感知继续工作
+
+### v7.7.1
+- **🎯 精简恢复策略**：借鉴 wf-dialog-mcp 的简洁设计，大部分错误直接发"继续"即可恢复，只有真正配额耗尽才切号。
+  - 临时限流（rate limit）从切号改为发继续，避免不必要的账号切换
+  - `networkErrors` 的默认动作从 `retry` 改成 `send-continue`
+
+### v7.7.0
+- **🏷️ 添加账号多标签选择器（体验对齐打标签）**：
+  - 重构了「添加账号」弹窗的标签选择逻辑。将各 Tab（OAuth 授权、单个登录、批量导入）的独立标签输入框，合并升级为置顶共享的**高级多标签选择组件**（体验与"为账号打标签"弹窗完全一致）。
+  - 支持**点击一键选择/取消已有标签**、带颜色圆点展示、输入新标签并回车快速新建并自动生成标签颜色。
+  - 批量导入（文本、JSON、Devin Token）和单个/OAuth 登录在导入新账号时，都会全自动且完美地继承上方已选的多个标签。
+
+### v7.6.29
+- **🔥 账号预热机制**：借鉴 wf-dialog-mcp 的实践，在当前账号额度接近阈值时提前验证下一个候选账号。
+  - 新增配置项 `preheatMargin`（默认 10）：当 `curScore <= threshold + preheatMargin` 时触发预热。
+  - 预热成功后缓存账号（有效期 5 分钟），真正切号时优先使用，减少切号延迟。
+  - 预热在后台静默执行，不阻塞主流程。
+
+### v7.6.28
+- **🔄 切号后静默重置机器码**：借鉴 wf-dialog-mcp 的实践，在自动切号（阈值触发 / DOM 检测触发）成功后，自动静默重置设备指纹（machineId / macMachineId / sqmId / devDeviceId / machineid / .installerId）。
+  - 减少不同账号之间的设备关联风控风险。
+  - 静默执行，不弹窗、不备份，不影响用户体验。
+  - 两条切号路径（`_checkAndSwitch` + `forceSwitch`）均已适配。
+
+### v7.6.27
+- **🔒 增强机器码重置完整性**：对比 wf-dialog-mcp 实现，补上两个缺失的指纹重置项，不影响其他软件。
+  - 新增 `telemetry.macMachineId` 字段重置（MAC 地址派生的机器码，之前漏了）。
+  - macOS 新增 `.installerId` 文件重置（`~/Library/Application Support/Windsurf/.installerId`）。
+  - 均为 Windsurf 专属文件，不改系统级 MachineGuid / /etc/machine-id，安全无副作用。
+
+### v7.6.26
+- **🔇 下线 Devin 一键领奖功能（活动结束）**：Devin onboarding $200 赠送活动官方已结束，打补丁创建 Automation 不会再发放余额。由于该功能已无意义，本版全面下线领奖动作。
+  - 删除 `src/devinPanel.ts`、`src/devinAutomationService.ts`、`resources/webview/devin-panel.js`。
+  - 从侧栏工具栏移除 🪙 金币按钮，从命令面板移除 `windsurfPool.openDevinPanel`。
+  - 进一步清理依赖导入、消息类型、后端处理函数 `handleDevinClaim200`。
+  - **余额相关功能全部保留**：依然可以看到 Extra 余额、按余额排序、余额变动历史、额外余额豁免限速冷却等。
+  - **智能导入去重保留**：v7.6.22 的 `auth1` token 保护机制仍然生效，不影响号池锁、批量导入、OAuth 导入。
+
+### v7.6.24
+- **🔧 修复 Devin 领奖面板 "无法确认 orgId" 的大坑**：实测发现 v7.6.20-23 的 `resolveOrg` 一直走错了路径。
+  - **原 bug**：`/api/users/post-auth` **响应体本身就返回 `org_id` 和 `org_name`**（对新账号还会自动创建 org），但之前的代码完全忽略返回值，反而击中 `/api/users/current-membership` — 该端点对 **auth1** 用户始终返回 `401 "No organizations found for auth1 user"`。
+  - **影响**：领奖面板所有账号都报错「无法确认 orgId」，实际上账号都是可用的（例如本次调试的 5 个号都是 $197-$200 余额、已完成 onboarding）。
+  - **修复**：`post-auth` 响应优先读 `org_id`，current-membership / organizations 仅作为 fallback。错误信息加上三个端点的 status code，方便未来 debug。
+  - **实测验证**：调试脚本 probe_devin_v4.js（8木10日已删）跳过 current-membership 后 5/5 账号都干净拿到 orgId 和余额。
+
+### v7.6.23
+- **🔓 批量导入禁用前端预去重**：v7.6.22 后端已加智能去重策略（覆盖修复 / 自动另存 `#oauth`），但前端 `filterExistingAccounts` 在 send 前就把同 email 账号丢掉了，**导致后端智能策略完全失效**（用户截图：导入 15 个 → 跳过重复 5 → 0 入库）。
+  - 本版**移除前端预过滤**，全部账号一律送到后端 `upsertAccount` 走智能策略。
+  - **效果**：旧账号缺 token 的可以通过重新批量登录被**补全**；OAuth 类导入碰到已有 token 的旧账号会**自动另存**为新条目，不会抹掉旧 token。
+  - 批量进度框的「已跳过重复 N」字段从此为 0（前端不再跳过）；如果你确实想跳过同邮箱，请改用号池过滤后再手动选择删除。
+
+### v7.6.22
+- **🔒 智能导入去重（保护旧账号的 Devin token）**：重构 `upsertAccount` 为智能策略，避免 OAuth / 从已登录账户导入这些路径把旧账号的 `auth1` token 抹掉。
+  - **默认 auto 策略**：
+    - 新的有 `devinAuth1Token` → **覆盖修复**（用于补上旧账号缺 token）
+    - 新的没 token 但旧的有 → **另存为新条目**（email 加 `#oauth` 后缀），不抹掉旧 token
+    - 都没 token → 覆盖（保持历史行为）
+  - **保护机制**：即使显式 `always` 覆盖策略下，也会 `merge` 旧的 `devinAuth1Token` 进新记录，万无一失。
+  - **另存后缀**：例如 `foo@bar.com` 已存（有 token）再 OAuth 登录同邮箱 → 另存为 `foo@bar.com#oauth`，两条同时可用。切号、资源、测活都各自独立。
+  - **注入隔离**：`sessionInjector` 注入到 Windsurf 本体时会剖离号池内部的 `#oauth` 后缀，让 Windsurf 看到的是干净的 `foo@bar.com`。
+  - **全部 6 个 upsert 入口适配**：调用方以返回的最终 email 为准（toast / setCurrent / postMessage 都已同步）。邮箱被另存时会弹提示「已另存为新条目（保护旧账号 Devin token）」。
+
+### v7.6.21
+- **💰 Devin 领奖面板（独立面板）**：从 v7.6.20 的「侧栏一键按钮」升级为**独立面板**（仿测活面板），支持可视化选、多选、全选、仅选可领、独立领。
+  - **打开方式**：侧栏工具栏金币按钮点一下 → 跳转领奖面板；或命令面板搜「打开 Devin 领奖面板」。
+  - **表格列**：复选框、邮箱、标签、套餐、Token、Extra 余额、领奖结果（含余额变化箭头 $0 → $200）、单独「领」按钮。
+  - **状态 Tab**：全部 / 可领 （≤$0 且有 token）/ 已有余额 / 缺 token / 已领成功 / 领奖失败。
+  - **一键选择**：「全选当前」/「仅选可领」/「清除选择」，表头复选框支持三态（未选/部分/全选）。
+  - **实时进度**：表格行按顺序变 黄圈转 → ✅成功 / ⏭跳过 / ❌失败，顶部进度条同步。运行中可随时点「停止」。
+  - **依然零浏览器**：后端逻辑与 v7.6.20 一致，并发 6，单账号 1-3 秒。
+
+### v7.6.20
+- **💰 Devin 一键领 $200（号池工具栏新按钮）**：在「排序/刷新全部」旁边新增一个金币图标按钮，点击后自动给号池里**有原始 auth1 token、且 Devin Extra 余额 ≤ $0**的账号通过 Devin Automations API（`POST /api/{org}/automations`）创建一个每天自动运行的 daily audit，触发 Devin 的 $200 onboarding 奖励。
+  - **完全纯 API 调用**：不开浏览器、不走 GitHub OAuth（直接 `PUT /api/users/info devin_onboarding_git_page=skipped`），单账号 1-3 秒，默认 6 并发。
+  - **智能跳过**：Extra 余额 > $0、`checklist.automations` 已 granted/completed、缺 auth1 token 的号都会自动跳过，不会重复领。
+  - **进度提示**：每个账号结果实时 toast，结束后汇总「✅成功 / ⏭跳过 / ❌失败」并自动刷新一次余额。
+  - **前置要求**：账号必须用「邮箱+密码」或「auth1 token」方式登录入库（OAuth/Firebase 登录拿不到 auth1 原始 token）。本版 `loginAuth1` 与 `loginByAuth1Token` 已经会自动把原始 `auth1_xxx` token 保存到 `StoredAccount.devinAuth1Token` 字段。
+  - **已有账号补救**：旧版入库的 auth1 账号没存原始 token，需要重新执行一次密码登录或 token 导入才能享用本功能。
+
+### v7.6.19
+- **📈 配额历史图表新增余额线**：「配额历史」面板的折线图在单账号查看时新增 💰 金色余额线（右 Y 轴：美元），实时呈现付费余额随时间的消耗/充值曲线，配合左轴的日/周配额折线，可以一眼看出"配额耗尽后是不是在烧余额、烧得有多快"。
+- 多账号查看时仍然保持原本的双线（实线日/虚线周），不显示余额线避免视觉过载。
+- 图例区动态显示余额范围（如 `余额 ($149.91 ~ $169.57)`），帮助快速判断绝对量级。
+
+### v7.6.18
+- **💰 排序新增「余额」选项**：侧栏排序下拉菜单新增 `💰 余额` 选项，按账号付费余额（`overageBalanceMicros`）降序排列，方便快速找出余额最多的号或核对充值情况；未加载/失效账号排最后；支持升降序切换。
+
+### v7.6.17
+- **🎨 第三轮自审修复**：v7.6.15 修正分组字符串时矫枉过正，把「按用量分组」下的余额选项从 `💰 余额可用` 一刀切改成纯文本，破坏了 usage 分组「全 emoji」的视觉一致性（其他选项都是 🔴🟠🟡🟢🔵）。本版恢复 usage 分组下的 💰 emoji 装饰，同时保持过滤器与 status 分组的纯文本，三方各自一致。
+- **核心洞察**：分组面板字符串与过滤器字符串**不必字符串相等**。过滤器走 `getAccountStatus`（纯文本采集），分组面板走 `getAccountGroup`（按维度独立装饰），两者不交叉，可独立选择视觉风格。
+
+### v7.6.16
+- **🔍 第二轮自审修复**：v7.6.15 的「余额豁免冷却日志」实现把同一组判断条件复制了一遍（一次用于日志、一次用于跳过），违反 DRY 原则、未来正则改一边漏一边会导致日志与实际行为不一致。本版抽出 `cachedIsRateLimit` 布尔变量统一两处判断。
+- **📝 视觉变化补充说明**：v7.6.15 移除了 v7.6.7 引入的分组「💰 余额可用」前缀 emoji，统一为纯文本 `余额可用` 与过滤器/状态保持一致；状态栏仍显示 `💰` emoji（空间小、emoji 更直观）。
+
+### v7.6.15
+- **🔧 余额规则代码审查修复**：
+  - 状态字符串统一：分组面板与过滤器现在共用 `余额可用` 常量，去除分组中冗余的 `💰` emoji 前缀，避免过滤器匹配失败
+  - 测活面板余额豁免冷却时输出诊断日志，便于排查"为什么这个限速号又测了一遍"
+  - 自动切号策略修复：余额号始终下沉到候选列表末尾，确保**先用完免费配额再消耗付费余额**（之前 `lowestNonZero` 策略下余额号会被优先选中，与用户期望相反）
+  - 补全 `.qh-balance-delta` CSS 容器样式（之前类名存在但样式未定义）
+  - 抽公共常量 `BALANCE_DELTA_MIN_MICROS` 和工具函数 `fmtBalanceDelta`，消除两处魔法数字
+  - `_ensureAccount` 显式初始化 `hasBalance: false`，避免新账号字段 undefined
+
+### v7.6.14
+- **💰 余额规则全面覆盖**：
+  - 侧栏测活状态：限速但有余额的号显示「💰 余额可用」而非红色「限速」
+  - 卡片 issue 区域：限速但有余额的号不再显示测活异常提示
+  - 测活面板冷却：余额号跳过 30 分钟限速冷却，每次测活正常复测
+  - 仪表盘统计：新增「💰 N 个账号余额可用」金色提示行
+  - 切号日志：配额硬耗尽触发切号时标注「（无余额）」，便于理解切号原因
+
+### v7.6.13
+- **🐛 修复状态栏 emoji 显示乱码**：v7.6.9 引入的状态栏「💰 余额可用 / 🔴 警告」emoji 因编码损坏显示为 `�` 替换字符（黑色方块），现已修复。
+
+### v7.6.12
+- **💰 配额历史显示金额变化**：统计面板表格和侧栏配额变动卡片中，余额栏现在同时显示该次记录相对上一次的金额变化（如 `-$0.28` 红色 / `+$5.00` 绿色），余额变动单独触发新条目（即使日/周配额未变也会记录）。
+
+### v7.6.11
+- **✨ 自动关闭配额警告横幅**：“正在使用付费余额”的黄色横幅现在会自动点击 X 关闭，不再需要手动关闭。
+
+### v7.6.10
+- **💰 侧栏配额历史显示金额**：侧栏配额变动历史卡片中，新增显示该次记录时的付费余额/金额（金色高亮）。
+
+### v7.6.9
+- **💰 余额号状态栏优化**：配额低于 10% 但有余额时，状态栏显示 💰 而非 🔴，且不显示红色警示背景。
+
+### v7.6.8
+- **💰 配额历史余额列**：统计面板配额历史表格新增「余额」列，显示每次记录时的付费余额（金色高亮）。
+
+### v7.6.7
+- **💰 余额号视觉增强**：余额字段金色高亮显示，配额耗尽但有余额时状态显示「余额可用」。
+- **🎯 智能排序优化**：配额都耗尽时，有余额的号排在无余额的号前面。
+- **🎨 分组状态优化**：按状态/用量分组时，余额号单独分组显示「💰 余额可用」。
+
+### v7.6.6
+- **💰 余额号支持**：账号有「额外用量余额」（overageBalanceMicros）时，即使日/周配额耗尽也视为可用，不触发自动切号，继续消耗付费余额。
+- **📊 状态栏/候选统计**：可用账号数统计现在也计入有余额的账号。
 
 ### v7.2.36
 - **✨ 恢复 Banner 视觉重设计**：glassmorphism 毛玻璃背景、顶部渐变装饰条、图标容器、pill 倒计时徽章、渐变按钮带阴影、更粗的发光进度条、底部分隔线，整体更现代精致。
@@ -819,7 +1075,7 @@ sudo chmod -R a+w "/opt/windsurf"                     # Linux 手动安装
 
 <div align="center">
 
-**Windsurf Pool** — 一个人的全栈工程，从 Electron 逆向到 DOM 注入到跨进程通信。
+**Kite** — 一个人的全栈工程，从 Electron 逆向到 DOM 注入到跨进程通信。
 
 如果它让你的 AI 编程体验更流畅，Star ⭐ 或赞赏就是最大的动力。
 
@@ -839,6 +1095,6 @@ sudo chmod -R a+w "/opt/windsurf"                     # Linux 手动安装
 
 <img src="qqqun.jpg" width="240" alt="QQ 交流群二维码">
 
-**Windsurf 增强插件交流群**｜群号：`1075342078`
+**Kite 插件交流群**｜群号：`1075342078`
 
 </div>

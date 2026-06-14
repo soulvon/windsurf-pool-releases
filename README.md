@@ -6,7 +6,8 @@
 
 界面增强 · BYOK（开发中）自带 Key · 多实例分身 · 多账号号池 · 自动恢复 · 长任务自动化
 
-[![Version](https://img.shields.io/badge/version-8.5.0-blue?style=flat-square)](https://github.com/soulvon/windsurf-pool-releases) [![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE) [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey?style=flat-square)]()
+[![Version](https://img.shields.io/badge/version-8.6.9-blue?style=flat-square)](https://github.com/soulvon/windsurf-pool-releases/releases/latest) [![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE) [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey?style=flat-square)]()
+
 
 </div>
 
@@ -131,6 +132,12 @@ sudo chmod -R a+w "/opt/windsurf"                     # Linux 手动安装
 <details>
 <summary><h2>更新日志（点击展开）</h2></summary>
 
+
+### v8.6.9
+- **Devin 兼容增强**：补齐 ACP 自定义智能体解锁与本地 registry 兜底，降低远端 registry 异常时的影响。
+- **汉化与注入稳定性补充**：同步 Devin / Windsurf 增强脚本的翻译与恢复逻辑，保持 8.6.x 系列修复生效。
+
+
 ### v8.5.0
 - **BYOK 改为开发中状态**：侧栏与命令面板标记 BYOK 开发中；暂停新增配置、启动 Sidecar 和应用 Patch，保留停止 Sidecar / 恢复 Patch 以便清理旧状态。
 
@@ -154,6 +161,7 @@ sudo chmod -R a+w "/opt/windsurf"                     # Linux 手动安装
 - **新增故障转移与扩展槽位管理**：模型映射可配置多目标顺序 failover；扩展槽位可从 Windsurf 模型目录启用，并为注入模型指定供应商、目标模型和图片能力。
 - **新增 BYOK 显示名模板与运行统计**：支持 `{prefix}` / `{label}` / `{provider}` / `{apiModel}` 模板，侧栏显示请求、Token、重试、错误和最近路由。
 - **审查修复**：sidecar 运行时复制会跳过开发用 `node_modules`，避免启动时复制大量无关文件；日志“清空显示”不会被下一次状态同步立即刷回。
+
 
 ### v7.10.0
 - **♻️ 异常监控核心重构**：用「配额记录时即时打标」取代「切号日志事后重建」，从根上解决多实例误报。

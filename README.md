@@ -6,7 +6,7 @@
 
 界面增强 · BYOK（开发中）自带 Key · 多实例分身 · 多账号号池 · 自动恢复 · 长任务自动化
 
-[![Version](https://img.shields.io/badge/version-8.6.9-blue?style=flat-square)](https://github.com/soulvon/windsurf-pool-releases/releases/latest) [![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE) [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey?style=flat-square)]()
+[![Version](https://img.shields.io/badge/version-8.7.10-blue?style=flat-square)](https://github.com/soulvon/windsurf-pool-releases/releases/latest) [![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE) [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey?style=flat-square)]()
 
 
 </div>
@@ -132,6 +132,9 @@ sudo chmod -R a+w "/opt/windsurf"                     # Linux 手动安装
 <details>
 <summary><h2>更新日志（点击展开）</h2></summary>
 
+
+### v8.7.10
+- Fix mini toggle thumb alignment: move thumb 10px instead of 12px in on state, add margin-left:auto and flex-shrink:0.
 
 ### v8.6.9
 - **Devin 兼容增强**：补齐 ACP 自定义智能体解锁与本地 registry 兜底，降低远端 registry 异常时的影响。
